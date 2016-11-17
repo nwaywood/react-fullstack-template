@@ -1,0 +1,34 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "semi": "off",
+    "no-undef": "off",
+    "padded-blocks": "off",
+    "space-before-function-paren": "off",
+    "no-use-before-define": "off",
+    "import/no-unresolved": "off",
+    "no-console": "off",
+    "indent": [ "error", 4 ],
+    "semi-spacing": [ "error", { "before": false, "after": true } ],
+    "no-multiple-empty-lines": [ "error", { "max": 2 } ],
+    "object-curly-spacing": [ "error", "always" ],
+    "valid-jsdoc": [
+      "error",
+      { "prefer": { "arg": "param", "return": " returns" }, "requireReturnType": false, "requireReturn": false }
+    ],
+    "max-len": [ "error", { "comments": 120, "code": 200 } ],
+    "no-param-reassign": [ "error", { "props": false } ],
+    "no-unused-expressions": [ "error", { "allowTernary": true } ],
+
+    "no-underscore-dangle": [ "warn", { "allow": [ "_id", "_rev", "_path" ] } ],
+    "handle-callback-err": [ "warn" ],
+    "no-unused-vars": [ "warn", { "vars": "local", "args": "none" } ],
+    "no-plusplus": [ "error", {
+      "allowForLoopAfterthoughts": true
+    }]
+  }
+}
