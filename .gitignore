@@ -35,3 +35,12 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# App bundle
+client/build/bundle.js
+client/build/bundle.js.map
+
+
+# System files and IDE files
+.DS_Store
+.idea
