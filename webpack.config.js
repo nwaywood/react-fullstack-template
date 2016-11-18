@@ -1,15 +1,14 @@
-/**
- * Created by Peter Ilfrich
- * Copyright (c) 2015 IBM Research. All rights reserved.
- *
- *
- */
-
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-const BUILD_DIR = path.resolve(__dirname, 'client/build');
-const APP_DIR = path.resolve(__dirname, 'client/src');
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const APP_DIR = path.resolve(__dirname, 'app/src');
+const PUBLIC_DIR = path.resolve(__dirname, 'app/public');
+
+const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: `${PUBLIC_DIR}/index.html`,
+  filename: 'index.html'
+});
 
 const config = {
     entry: `${APP_DIR}/index.js`,
@@ -20,12 +19,16 @@ const config = {
     module: {
         loaders: [
             {
-                test: /\.jsx?/,
+                test: /\.js$/,
                 include: APP_DIR,
-                loader: 'babel',
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
             },
         ],
     },
+    plugins: [ HTMLWebpackPluginConfig ]
 };
 
 module.exports = config;
