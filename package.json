@@ -3,24 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "author": "Peter Ilfrich",
+  "author": "Peter Ilfrich, Nick Waywood",
   "dependencies": {
-    "babel-core": "^6.18.2",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "fibers": "^1.0.14",
     "jsx": "^0.9.89",
-    "nano": "^6.2.0",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "webpack": "^1.13.2"
+    "react-dom": "^15.3.2"
   },
   "scripts": {
     "babel-node": "babel-node --presets=es2015 --ignore='app|client'",
     "dev": "webpack -d --watch",
     "build": "webpack -p"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.3"
   }
 }
