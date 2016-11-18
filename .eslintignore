@@ -6,4 +6,4 @@ node_modules/
 *.txt
 *.log
 .npm/
-client/build/
+dist
