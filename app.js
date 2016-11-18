@@ -1,9 +1,3 @@
-/**
- * Created by Peter Ilfrich
- * Copyright (c) 2016 IBM Research. All rights reserved.
- *
- *
- */
 /*
  * Loading the environment with default fallbacks
  */

@@ -1,9 +1,3 @@
-/**
- * Created by Peter Ilfrich
- * Copyright (c) 2015 IBM Research. All rights reserved.
- *
- *
- */
 import React from 'react';
 import { render } from 'react-dom';
 
