@@ -29,6 +29,7 @@
     "no-unused-vars": [ "warn", { "vars": "local", "args": "none" } ],
     "no-plusplus": [ "error", {
       "allowForLoopAfterthoughts": true
-    }]
+    }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
