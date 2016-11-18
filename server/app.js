@@ -1,24 +1,21 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
 /*
  * Loading the environment with default fallbacks
  */
 const HTTP_PORT = process.env.PORT || 3000;
 
 
-/*
- * NPM imports
- */
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const bodyParser = require('body-parser');
 
-const app = express();
 
 
 /*
  * Basic fallback for front-end resources
  */
-app.use(express.static('client/build'));
+app.use(express.static('dist'));
 
 /*
  * Parsing JSON body e.g. for POST calls

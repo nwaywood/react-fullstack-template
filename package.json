@@ -2,7 +2,7 @@
   "name": "react-template-nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server/app.js",
   "author": "Peter Ilfrich, Nick Waywood",
   "scripts": {
     "babel-node": "babel-node --presets=es2015 --ignore='app|client'",
