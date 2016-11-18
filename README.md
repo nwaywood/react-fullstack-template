@@ -19,14 +19,14 @@ This repository contains a project template for React/NodeJS development.
 npm install
 
 # development only
-npm install nodemon webpack -g
+npm install -g nodemon
 ```
 
 ## Run
 
 ```
 # development
-webpack -d --watch
+npm run start
 nodemon app.js
 ```
 
