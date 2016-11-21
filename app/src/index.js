@@ -8,6 +8,6 @@ render(<Folders/>, document.getElementById('main'));
 */
 
 render(
-    <h1>Hello world</h1>,
-    document.getElementById('root'),
+  <h1>Hello world</h1>,
+  document.getElementById('root'),
 )
