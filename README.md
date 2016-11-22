@@ -23,17 +23,22 @@ npm install -g nodemon
 
 ## Run
 
-```
-# development
-npm run start
-nodemon server/app.js
-```
+### Development
+
+`npm run start`
+
+to start the development server. If you need to communicate with the api:
+
+`nodemon server/app.js`
+
+### Production
 
 ```
-# production
-webpack -d
+npm run build
 node server/app.js
 ```
+
+By default the production server that on port `3000`
 
 If you want to run the application on port other than `3000`, simply define it as environment variable:
 

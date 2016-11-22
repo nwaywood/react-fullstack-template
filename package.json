@@ -5,8 +5,7 @@
   "main": "server/app.js",
   "author": "Peter Ilfrich, Nick Waywood",
   "scripts": {
-    "babel-node": "babel-node --presets=es2015 --ignore='app|client'",
-    "start": "webpack -d --watch",
+    "start": "webpack-dev-server",
     "build": "webpack -p"
   },
   "dependencies": {
@@ -27,6 +26,8 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
     "html-webpack-plugin": "^2.24.1",
-    "webpack": "^1.13.3"
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
