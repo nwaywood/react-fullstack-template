@@ -13,6 +13,7 @@
     "import/no-unresolved": "off",
     "no-console": "off",
     "indent": [ "error", 4 ],
+    "react/jsx-indent": ["error", 4],
     "semi-spacing": [ "error", { "before": false, "after": true } ],
     "no-multiple-empty-lines": [ "error", { "max": 2 } ],
     "object-curly-spacing": [ "error", "always" ],
