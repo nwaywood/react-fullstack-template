@@ -17,8 +17,8 @@ This repository contains a project template for React/NodeJS development
 From the root directory, install the project dependencies and check that it works:
 
 ```
-$ npm install            # install dependencies
-$ npm start              # compile and launch
+$ npm install           # install dependencies
+$ npm start             # compile and launch
 ```
 
 ## Application Structure
@@ -34,7 +34,7 @@ $ npm start              # compile and launch
 └── server              # Root folder for server code
 ```
 
-Note: Prefer to [this](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.469taxbj0) blog post for information on `presentational` vs `container` components
+Note: Refer to [this](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.469taxbj0) blog post for information on `presentational` vs `container` components
 
 ## Development
 
@@ -44,12 +44,12 @@ to start the development server. If you need to communicate with the api:
 
 `nodemon server/app.js`
 
-and the devServer will proxy api calls to the backend express server
+and the devServer will proxy api calls to the backend express server... magic!
 
 ## Deployment
 
 ```
-npm run build              # compile project into /dist folder
+npm run build          # compile project into /dist folder
 ```
 
 then you can serve the production app with
