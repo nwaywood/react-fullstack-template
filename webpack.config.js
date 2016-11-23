@@ -33,7 +33,8 @@ const config = {
                 include: APP_DIR,
                 // babel loader for ES6 tranpilation and
                 // react-hot for HMR of react components
-                loaders: ['react-hot-loader/webpack', 'babel?presets[]=es2015'],
+                // config for babel-loader is in .babelrc
+                loaders: ['react-hot-loader/webpack', 'babel'],
             },
         ],
     },
