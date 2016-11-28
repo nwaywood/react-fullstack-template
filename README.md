@@ -65,3 +65,14 @@ If you want to run the application on port other than `3000`, simply define it a
 ```
 PORT=4000 node server/app.js
 ```
+
+### ES6 Support
+
+If you need full ES6 support on the server-side (e.g. Javascript `import`), you need to run the server with `babel-node`.
+
+```
+# install babel-node globally
+npm -g babel-cli
+# start the server
+babel-node server/app.js
+```
