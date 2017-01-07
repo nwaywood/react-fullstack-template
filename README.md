@@ -2,6 +2,13 @@
 
 This repository contains a project template for React/NodeJS development
 
+1. [Features](#features)
+2. [Getting Started](#getting-started)
+3. [Application Structure](#application-structure)
+4. [Development](#development)
+5. [Deployment](#deployment)
+6. [ES6 Support](#es6-support)
+
 ## Features
 
 * [react](https://github.com/facebook/react)
@@ -11,14 +18,15 @@ This repository contains a project template for React/NodeJS development
 * [babel](https://github.com/babel/babel)
 * [express](https://github.com/expressjs/express)
 * [eslint](http://eslint.org)
+* [nodemon](http://nodemon.io)
 
 ## Getting Started
 
 From the root directory, install the project dependencies and check that it works:
 
-```
-$ npm install           # install dependencies
-$ npm start             # compile and launch
+```bash
+npm install           # install dependencies
+npm start             # compile and launch
 ```
 
 ## Application Structure
@@ -38,23 +46,27 @@ Note: Refer to [this](https://medium.com/@dan_abramov/smart-and-dumb-components-
 
 ## Development
 
-`npm run start`
+```bash
+npm run start
+```
 
 to start the development server. If you need to communicate with the api:
 
-`nodemon server/app.js`
+```bash
+npm run hot-server
+```
 
 and the devServer will proxy api calls to the backend express server... magic!
 
 ## Deployment
 
-```
+```bash
 npm run build          # compile project into /dist folder
 ```
 
 then you can serve the production app with
 
-```
+```bash
 node server/app.js
 ```
 
@@ -62,17 +74,21 @@ By default the production server listens on port `3000`
 
 If you want to run the application on port other than `3000`, simply define it as environment variable:
 
-```
+```bash
 PORT=4000 node server/app.js
 ```
 
-### ES6 Support
+## ES6 Support
 
-If you need full ES6 support on the server-side (e.g. Javascript `import`), you need to run the server with `babel-node`.
+If you need full ES6 support on the server-side (e.g. Javascript `import`), you need to run the server with `babel-node`. There's an NPM script prepared for this:
 
+```bash
+npm run es6-production    # compiles the client (webpack) scripts and starts the `babel-node` server
 ```
-# install babel-node globally
-npm -g babel-cli
-# start the server
-babel-node server/app.js
+
+In development mode, you can simply run:
+
+```bash
+npm run hot-server        # starts nodemon with ES6 support (babel-node)
+npm run hot-client        # runs webpack in watch mode
 ```
