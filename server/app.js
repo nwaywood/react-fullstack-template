@@ -20,9 +20,12 @@ app.get('/api/example', (req, res) => {
     res.send({ message: 'example GET endpoint' })
 })
 
-// reroute all html (non-api) requests to index.html so browserHistory in react-router works
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'))
+// front-end router endpoints
+const viewingRoutes = ['/']
+viewingRoutes.forEach((route) => {
+    app.get(route, (req, res) => {
+        res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
+    })
 })
 
 // Start the app

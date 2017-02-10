@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-import App from './components/App'
-import Home from './components/Home'
-import About from './components/About'
+import App from './App'
+import Home from './Home'
+import About from './About'
 
 
 render((
