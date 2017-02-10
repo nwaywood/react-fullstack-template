@@ -6,4 +6,5 @@ node_modules/
 *.txt
 *.log
 .npm/
-dist
+dist/
+Dockerfile

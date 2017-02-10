@@ -10,7 +10,7 @@ const App = (props) => (
     </div>
 )
 
-app.propTypes = {
+App.propTypes = {
     children: React.PropTypes.node,
 }
 

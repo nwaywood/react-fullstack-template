@@ -21,7 +21,7 @@ app.get('/api/example', (req, res) => {
 })
 
 // front-end router endpoints
-const viewingRoutes = ['/']
+const viewingRoutes = ['/', '/about']
 viewingRoutes.forEach((route) => {
     app.get(route, (req, res) => {
         res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
