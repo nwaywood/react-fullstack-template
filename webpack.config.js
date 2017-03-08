@@ -9,7 +9,7 @@ const PUBLIC_DIR = path.resolve(__dirname, 'app/public')
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: `${PUBLIC_DIR}/index.html`,
     filename: 'index.html',
-    inject: false,
+    inject: true,
 })
 
 // Enable multi-pass compilation for enhanced performance
@@ -26,6 +26,7 @@ const config = {
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js',
+        publicPath: '/',
     },
     module: {
         loaders: [
