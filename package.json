@@ -18,7 +18,7 @@
     "jsx": "^0.9.89",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^3.0.0"
+    "react-router-dom": "^4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
