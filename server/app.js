@@ -20,12 +20,9 @@ app.get('/api/example', (req, res) => {
     res.send({ message: 'example GET endpoint' })
 })
 
-// front-end router endpoints
-const viewingRoutes = ['/', '/about']
-viewingRoutes.forEach((route) => {
-    app.get(route, (req, res) => {
-        res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
-    })
+// reroute all frontend routes to be handled by react-router
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
 })
 
 // Start the app
