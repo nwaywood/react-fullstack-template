@@ -1,14 +1,8 @@
-/**
- * Created by Peter Ilfrich
- * Copyright (c) 2016 IBM Research. All rights reserved.
- *
- *
- */
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const Header = (props) => (
+const Header = props => (
     <header>
         <ul>
             <li><Link to="/">Home</Link></li>
