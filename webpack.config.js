@@ -29,22 +29,31 @@ const config = {
         publicPath: '/',
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 include: APP_DIR,
                 // babel loader for ES6 tranpilation and
                 // react-hot for HMR of react components
                 // config for babel-loader is in .babelrc
-                loaders: ['react-hot-loader/webpack', 'babel'],
+                use: [
+                    'react-hot-loader/webpack',
+                    'babel-loader',
+                ],
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader',
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
             },
             {
                 test: /\.png$/,
-                loader: 'url-loader?limit=100000',
+                loader: 'url-loader',
+                options: {
+                    limit: 100000,
+                },
             },
             {
                 test: /\.jpg$/,
@@ -52,19 +61,31 @@ const config = {
             },
             {
                 test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=application/font-woff',
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'application/font-woff',
+                },
             },
             {
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=application/octet-stream',
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'application/octet-stream',
+                },
             },
             {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file',
+                loader: 'file-loader',
             },
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=image/svg+xml',
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'image/svg+xml',
+                },
             },
         ],
     },
