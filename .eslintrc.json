@@ -1,38 +1,43 @@
 {
-  "root": true,
-  "env": {
-    "node": true
-  },
-  "extends": "airbnb",
-  "rules": {
-    "semi": "off",
-    "no-undef": "off",
-    "padded-blocks": "off",
-    "space-before-function-paren": "off",
-    "no-use-before-define": "off",
-    "import/no-unresolved": "off",
-    "no-console": "off",
-    "indent": [ "error", 4 ],
-    "react/jsx-indent": ["error", 4],
-    "semi-spacing": [ "error", { "before": false, "after": true } ],
-    "no-multiple-empty-lines": [ "error", { "max": 2 } ],
-    "object-curly-spacing": [ "error", "always" ],
-    "valid-jsdoc": [
-      "error",
-      { "prefer": { "arg": "param", "return": " returns" }, "requireReturnType": false, "requireReturn": false }
+    "root": true,
+    "env": {
+        "node": true
+    },
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
     ],
-    "max-len": [ "error", { "comments": 120, "code": 200 } ],
-    "no-param-reassign": [ "error", { "props": false } ],
-    "no-unused-expressions": [ "error", { "allowTernary": true } ],
-
-    "no-underscore-dangle": [ "warn", { "allow": [ "_id", "_rev", "_path" ] } ],
-    "handle-callback-err": [ "warn" ],
-    "no-unused-vars": [ "warn", { "vars": "local", "args": "none" } ],
-    "no-plusplus": [ "error", {
-      "allowForLoopAfterthoughts": true
-    }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/prop-types": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
-  }
+    "plugins": [
+        "react",
+        "import",
+        "prettier"
+    ],
+    "rules": {
+        "no-undef": "off",
+        "no-console": "off",
+        "valid-jsdoc": [
+            "error",
+            {
+                "prefer": {
+                    "arg": "param",
+                    "return": " returns"
+                },
+                "requireReturnType": false,
+                "requireReturn": false
+            }
+        ],
+        "no-use-before-define": "off",
+        "no-param-reassign": ["error", { "props": false }],
+        "no-underscore-dangle": ["warn", { "allow": ["_id", "_rev", "_path"] }],
+        "handle-callback-err": "error",
+        "no-unused-vars": ["warn", { "vars": "local", "args": "none" }],
+        "no-unused-expressions": ["error", { "allowTernary": true }],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "import/no-unresolved": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/prop-types": "off",
+        "prettier/prettier": "error"
+    }
 }
