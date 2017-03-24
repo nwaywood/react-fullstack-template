@@ -11,7 +11,7 @@
     "hot-client": "webpack -d --watch --ignore server --ignore app/public",
     "serve": "babel-node server/app.js",
     "lint": "eslint *",
-    "format": "prettier --write \"app/src/**/*.js\""
+    "format": "eslint --fix \"app/src/**/*.js\""
   },
   "dependencies": {
     "body-parser": "^1.15.2",
