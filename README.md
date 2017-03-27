@@ -55,7 +55,7 @@ Note: Refer to [this](https://medium.com/@dan_abramov/smart-and-dumb-components-
 ## Development
 
 ```bash
-npm run start
+npm start
 ```
 
 to start the development server. If you need to communicate with the api:
@@ -88,15 +88,11 @@ PORT=4000 node server/app.js
 
 ## ES6 Support
 
-If you need full ES6 support on the server-side (e.g. Javascript `import`), you need to run the server with `babel-node`. There's an NPM script prepared for this:
-
-```bash
-npm run es6-production    # compiles the client (webpack) scripts and starts the `babel-node` server
-```
+If you need full ES6 support on the server-side (e.g. Javascript `import`), you need to run the server with `babel-node`.
 
 In development mode, you can simply run:
 
 ```bash
+npm start                 # Runs webpack dev server
 npm run hot-server        # starts nodemon with ES6 support (babel-node)
-npm run hot-client        # runs webpack in watch mode
 ```

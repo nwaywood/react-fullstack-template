@@ -8,7 +8,6 @@
     "start": "webpack-dev-server",
     "build": "webpack -p",
     "hot-server": "nodemon server/app.js --exec babel-node --presets es2015",
-    "hot-client": "webpack -d --watch --ignore server --ignore app/public",
     "serve": "babel-node server/app.js",
     "lint": "eslint *",
     "format": "eslint --fix \"app/src/**/*.js\""
