@@ -10,7 +10,7 @@
     "hot-server": "nodemon server/app.js --exec babel-node --presets es2015",
     "serve": "babel-node server/app.js",
     "lint": "eslint *",
-    "format": "eslint --fix \"app/src/**/*.js\""
+    "format": "eslint --fix *"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
