@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 const Home = props => (
     <div>
@@ -6,12 +7,11 @@ const Home = props => (
     </div>
 );
 
-const renderItem = ({ title }) => {
-    const style = {
-        fontSize: "1.5em",
-        margin: "5px 0px"
-    };
-    return <li style={style}>{title}</li>;
-};
+const renderItem = ({ title }) => <Li>{title}</Li>;
+
+const Li = styled.li`
+    font-size: 1.5em;
+    margin: "5px 0px";
+`;
 
 export default Home;

@@ -14,6 +14,7 @@ This repository contains a project template for React/NodeJS development
 * [react](https://github.com/facebook/react)
 * [redux](https://github.com/rackt/redux)
 * [react-router](https://github.com/rackt/react-router)
+* [styled-components](https://github.com/styled-components/styled-components)
 * [webpack](https://github.com/webpack/webpack)
 * [babel](https://github.com/babel/babel)
 * [express](https://github.com/expressjs/express)

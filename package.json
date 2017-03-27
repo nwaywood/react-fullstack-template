@@ -18,7 +18,8 @@
     "jsx": "^0.9.89",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router-dom": "^4.0.0"
+    "react-router-dom": "^4.0.0",
+    "styled-components": "^1.4.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
