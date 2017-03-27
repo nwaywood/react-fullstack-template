@@ -22,6 +22,14 @@ This repository contains a project template for React/NodeJS development
 
 ## Getting Started
 
+Setup directory for project:
+
+```bash
+git clone git@github.ibm.com:aur/react-template-nodejs.git <your-project-name>
+cd <your-project-name>
+rm -rf .git
+```
+
 From the root directory, install the project dependencies and check that it works:
 
 ```bash
