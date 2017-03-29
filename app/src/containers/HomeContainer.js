@@ -1,8 +1,10 @@
+// @flow
+
 import React from "react";
 import Home from "../components/Home";
 
 class HomeContainer extends React.Component {
-    constructor(props) {
+    constructor(props: Object) {
         super(props);
         this.state = {
             posts: [],
@@ -12,10 +14,16 @@ class HomeContainer extends React.Component {
         this.onRefreshClick = this.onRefreshClick.bind(this);
     }
 
+    state: {
+        posts: Array<Object>,
+        isFetching: boolean
+    };
+
     componentDidMount() {
         this.fetchData();
     }
 
+    onRefreshClick: Function;
     onRefreshClick() {
         this.setState((prevState, props) => ({
             isFetching: true

@@ -1,16 +1,20 @@
 {
   "root": true,
+  "parser": "babel-eslint",
   "env": {
     "node": true
   },
   "extends": [
     "airbnb",
+    "plugin:flowtype/recommended",
     "prettier",
     "prettier/react"
   ],
   "plugins": [
     "react",
     "import",
+    "flowtype",
+    "flowtype-errors",
     "prettier"
   ],
   "rules": {
@@ -38,6 +42,7 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
-    "prettier/prettier": ["error", { "tabWidth": 4 }]
+    "prettier/prettier": ["error", { "tabWidth": 4 }],
+    "flowtype-errors/show-errors": 2
   }
 }
