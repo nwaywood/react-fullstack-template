@@ -13,8 +13,8 @@ This repository contains a project template for React/NodeJS development
 ## Features
 
 * [react](https://github.com/facebook/react)
-* [redux](https://github.com/rackt/redux)
-* [react-router](https://github.com/rackt/react-router)
+* [redux](https://github.com/reactjs/redux)
+* [react-router](https://github.com/ReactTraining/react-router)
 * [styled-components](https://github.com/styled-components/styled-components)
 * [flow](https://flow.org/en/)
 * [webpack](https://github.com/webpack/webpack)
