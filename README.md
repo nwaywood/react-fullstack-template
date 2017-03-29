@@ -3,11 +3,12 @@
 This repository contains a project template for React/NodeJS development
 
 1. [Features](#features)
-2. [Getting Started](#getting-started)
-3. [Application Structure](#application-structure)
-4. [Development](#development)
-5. [Deployment](#deployment)
-6. [ES6 Support](#es6-support)
+1. [Getting Started](#getting-started)
+1. [Application Structure](#application-structure)
+1. [Development](#development)
+1. [Deployment](#deployment)
+1. [Linting and Formatting](#linting-and-formatting)
+1. [ES6 Support](#es6-support)
 
 ## Features
 
@@ -15,11 +16,13 @@ This repository contains a project template for React/NodeJS development
 * [redux](https://github.com/rackt/redux)
 * [react-router](https://github.com/rackt/react-router)
 * [styled-components](https://github.com/styled-components/styled-components)
+* [flow](https://flow.org/en/)
 * [webpack](https://github.com/webpack/webpack)
 * [babel](https://github.com/babel/babel)
-* [express](https://github.com/expressjs/express)
 * [eslint](http://eslint.org)
+* [prettier](https://github.com/prettier/prettier)
 * [nodemon](http://nodemon.io)
+* [express](https://github.com/expressjs/express)
 
 ## Getting Started
 
@@ -86,6 +89,12 @@ If you want to run the application on port other than `3000`, simply define it a
 ```bash
 PORT=4000 node server/app.js
 ```
+
+## Linting and Formatting
+
+This project uses `prettier` integrated with `eslint` to show formatting errors via `eslint`. To automatically fix
+these formatting errors you can run `npm run format`. However, it is recommended to integrate this functionality with
+your editor to improve the development workflow.
 
 ## ES6 Support
 
