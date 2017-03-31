@@ -41,6 +41,9 @@ npm install           # install dependencies
 npm start             # compile and launch
 ```
 
+Note: The master branch contains 'vanilla' react state management with `setState()`, a `redux` branch is available
+if your application state is more complex.
+
 ## Application Structure
 
 ```
