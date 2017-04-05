@@ -16,7 +16,7 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 // in larger projects. Good default
 const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin(
     {
-        multiStep: true
+        multiStep: false
     }
 );
 
