@@ -5,7 +5,7 @@
   "main": "server/app.js",
   "author": "Peter Ilfrich, Nick Waywood",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server -d",
     "build": "webpack -p",
     "hot-server": "nodemon server/app.js --exec babel-node --presets es2015",
     "serve": "babel-node server/app.js",
