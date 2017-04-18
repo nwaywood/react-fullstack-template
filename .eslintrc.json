@@ -42,7 +42,7 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
-    "prettier/prettier": ["error", { "tabWidth": 4 }],
+    "prettier/prettier": ["error", { "tabWidth": 4, "semi": false }],
     "flowtype-errors/show-errors": 2
   }
 }
