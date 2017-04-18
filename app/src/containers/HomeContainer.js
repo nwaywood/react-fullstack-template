@@ -1,35 +1,35 @@
 // @flow
 
-import React from "react";
-import Home from "../components/Home";
+import React from "react"
+import Home from "../components/Home"
 
 class HomeContainer extends React.Component {
     constructor(props: Object) {
-        super(props);
+        super(props)
         this.state = {
             posts: [],
             isFetching: true
-        };
+        }
 
-        this.onRefreshClick = this.onRefreshClick.bind(this);
+        this.onRefreshClick = this.onRefreshClick.bind(this)
     }
 
     state: {
         posts: Array<Object>,
         isFetching: boolean
-    };
-
-    componentDidMount() {
-        this.fetchData();
     }
 
-    onRefreshClick: Function;
+    componentDidMount() {
+        this.fetchData()
+    }
+
+    onRefreshClick: Function
     onRefreshClick() {
         this.setState((prevState, props) => ({
             isFetching: true
-        }));
+        }))
 
-        this.fetchData();
+        this.fetchData()
     }
 
     fetchData() {
@@ -41,7 +41,8 @@ class HomeContainer extends React.Component {
                 this.setState((prevState, props) => ({
                     posts: payload.hits,
                     isFetching: false
-                })));
+                }))
+            )
     }
 
     render() {
@@ -52,8 +53,8 @@ class HomeContainer extends React.Component {
                     ? <h2>Loading...</h2>
                     : <Home posts={this.state.posts} />}
             </div>
-        );
+        )
     }
 }
 
-export default HomeContainer;
+export default HomeContainer

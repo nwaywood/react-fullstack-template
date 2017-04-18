@@ -1,16 +1,16 @@
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
+const webpack = require("webpack")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const path = require("path")
 
-const BUILD_DIR = path.resolve(__dirname, "dist");
-const APP_DIR = path.resolve(__dirname, "app/src");
-const PUBLIC_DIR = path.resolve(__dirname, "app/public");
+const BUILD_DIR = path.resolve(__dirname, "dist")
+const APP_DIR = path.resolve(__dirname, "app/src")
+const PUBLIC_DIR = path.resolve(__dirname, "app/public")
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: `${PUBLIC_DIR}/index.html`,
     filename: "index.html",
     inject: true
-});
+})
 
 // Enable multi-pass compilation for enhanced performance
 // in larger projects. Good default
@@ -18,7 +18,7 @@ const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin(
     {
         multiStep: false
     }
-);
+)
 
 // See https://medium.com/@kimberleycook/intro-to-webpack-1d035a47028d#.8zivonmtp for
 // a step-by-step introduction to reading a webpack config
@@ -108,6 +108,6 @@ const config = {
         // port to run the dev server on
         port: 8080
     }
-};
+}
 
-module.exports = config;
+module.exports = config
