@@ -10,7 +10,9 @@ const Home = (props: { posts: Array<Object> }) => (
 )
 
 // for each item in posts, map it to a <Li> styled-component containing the title
-const renderItem = ({ title }: { title: string }) => <Li>{title}</Li>
+const renderItem = ({ title }: { title: string }) => (
+    <Li key={title}>{title}</Li>
+)
 
 const Li = styled.li`
     font-size: 1.5em;

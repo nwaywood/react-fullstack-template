@@ -1,5 +1,6 @@
 # build dir
 dist
+app/public/dist
 
 # npm
 node_modules

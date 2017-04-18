@@ -2,9 +2,9 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const path = require("path")
 
-const BUILD_DIR = path.resolve(__dirname, "dist")
-const APP_DIR = path.resolve(__dirname, "app/src")
-const PUBLIC_DIR = path.resolve(__dirname, "app/public")
+const BUILD_DIR = path.resolve(__dirname, "app", "public", "dist")
+const APP_DIR = path.resolve(__dirname, "app", "src")
+const PUBLIC_DIR = path.resolve(__dirname, "app", "public")
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: `${PUBLIC_DIR}/index.html`,
@@ -27,7 +27,7 @@ const config = {
     output: {
         path: BUILD_DIR,
         filename: "bundle.js",
-        publicPath: "/"
+        publicPath: "/dist/"
     },
     module: {
         rules: [
