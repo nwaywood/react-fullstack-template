@@ -7,6 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server -d",
     "build": "webpack -p",
+    "hot-client": "webpack -d --watch",
     "hot-server": "nodemon server/app.js --exec babel-node --presets es2015",
     "serve": "babel-node server/app.js",
     "lint": "eslint *",
