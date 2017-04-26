@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 
 import HomeContainer from "./containers/HomeContainer"
 import Header from "./components/Header"
-import About from "./components/About"
+import About from "./components/About/About"
 
 render(
     <Router>
