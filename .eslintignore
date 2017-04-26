@@ -2,3 +2,7 @@ node_modules/
 *.json
 .npm/
 dist/
+
+*.md
+*.log
+Dockerfile
