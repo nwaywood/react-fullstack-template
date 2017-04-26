@@ -10,9 +10,6 @@ const HTTP_PORT = process.env.PORT || 3000
 // mount parser for applicaton/json content
 app.use(bodyParser.json({ limit: "1mb" }))
 
-// mount static frontend to express
-app.use(express.static(path.join(__dirname, "..", "app", "public")))
-
 /*
  * API endpoints
  */
@@ -21,11 +18,17 @@ app.get("/api/example", (req, res) => {
 })
 
 // reroute all frontend routes to be handled by react-router
-app.get("*", (req, res) => {
-    res.sendFile(
-        path.join(__dirname, "..", "app", "public", "dist", "index.html")
-    )
+const viewingRoutes = ["/"]
+viewingRoutes.forEach(route => {
+    app.get(route, (req, res) => {
+        res.sendFile(
+            path.join(__dirname, "..", "app", "public", "dist", "index.html")
+        )
+    })
 })
+
+// mount static frontend to express
+app.use(express.static(path.join(__dirname, "..", "app", "public")))
 
 // Start the app
 app.listen(HTTP_PORT, () => {

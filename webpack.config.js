@@ -7,7 +7,7 @@ const APP_DIR = path.resolve(__dirname, "app", "src")
 const PUBLIC_DIR = path.resolve(__dirname, "app", "public")
 
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: `${APP_DIR}/index.html`,
+    template: `${PUBLIC_DIR}/index.html`,
     filename: "index.html",
     inject: true
 })
