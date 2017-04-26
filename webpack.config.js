@@ -31,6 +31,14 @@ const config = {
     },
     module: {
         rules: [
+            // First, run the linter.
+            // It's important to do this before Babel processes the JS.
+            {
+                test: /\.(js|jsx)$/,
+                include: APP_DIR,
+                enforce: "pre",
+                loader: "eslint-loader"
+            },
             {
                 test: /\.(js|jsx)$/,
                 include: APP_DIR,
