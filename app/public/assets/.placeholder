@@ -1,6 +1,0 @@
-Including files into the web application
-========================================
-
-Imagine an image 'filename.jpg' in the 'app/public/assets' folder. You would display this as:
-
-	<img src="/assets/filename.jpg" />
