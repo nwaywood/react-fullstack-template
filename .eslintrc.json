@@ -35,7 +35,7 @@
     "no-param-reassign": ["error", { "props": false }],
     "no-underscore-dangle": ["warn", { "allow": ["_id", "_rev", "_path"] }],
     "handle-callback-err": "error",
-    "no-unused-vars": ["warn", { "vars": "local", "args": "none" }],
+    "no-unused-vars": ["error", { "vars": "local", "args": "none" }],
     "no-unused-expressions": ["error", { "allowTernary": true }],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "import/no-unresolved": "off",
