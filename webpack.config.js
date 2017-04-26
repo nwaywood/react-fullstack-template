@@ -32,50 +32,29 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 include: APP_DIR,
                 // babel loader for ES6 tranpilation and
                 // react-hot for HMR of react components
                 // config for babel-loader is in .babelrc
                 use: ["react-hot-loader/webpack", "babel-loader"]
             },
+            // The "url" loader handles all assets specified by the test regex.
+            // "url" loader embeds assets smaller than specified size as data URLs to avoid requests.
+            // Otherwise, it acts like the "file" loader.
             {
-                test: /\.png$/,
+                test: /\.(png|jpg|woff|woff2|ttf|eot)$/,
                 loader: "url-loader",
                 options: {
-                    limit: 100000
+                    limit: 10000
                 }
             },
+            // "file" loader for svg
             {
-                test: /\.jpg$/,
-                loader: "file-loader"
-            },
-            {
-                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url-loader",
-                options: {
-                    limit: 10000,
-                    mimetype: "application/font-woff"
-                }
-            },
-            {
-                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url-loader",
-                options: {
-                    limit: 10000,
-                    mimetype: "application/octet-stream"
-                }
-            },
-            {
-                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "file-loader"
-            },
-            {
-                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url-loader",
-                options: {
-                    limit: 10000,
-                    mimetype: "image/svg+xml"
+                test: /\.svg$/,
+                loader: "file-loader",
+                query: {
+                    name: "static/media/[name].[hash:8].[ext]"
                 }
             }
         ]
