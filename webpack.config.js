@@ -1,5 +1,6 @@
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CircularDependencyPlugin = require("circular-dependency-plugin")
 const path = require("path")
 
 const BUILD_DIR = path.resolve(__dirname, "dist")
@@ -12,13 +13,18 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     inject: true
 })
 
-// Enable multi-pass compilation for enhanced performance
-// in larger projects. Good default
+// TODO: re-enable multi-pass compilation for enhanced performance in larger projects when https://github.com/jantimon/html-webpack-plugin/issues/533 is fixed
 const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin(
     {
         multiStep: false
     }
 )
+const CircularDependencyPluginConfig = new CircularDependencyPlugin({
+    // exclude detection of files based on a RegExp
+    exclude: /a\.js|node_modules/,
+    // add errors to webpack instead of warnings
+    failOnError: true
+})
 
 // See https://medium.com/@kimberleycook/intro-to-webpack-1d035a47028d#.8zivonmtp for
 // a step-by-step introduction to reading a webpack config
@@ -67,7 +73,11 @@ const config = {
             }
         ]
     },
-    plugins: [HTMLWebpackPluginConfig, HotModuleReplacementPluginConfig],
+    plugins: [
+        HTMLWebpackPluginConfig,
+        HotModuleReplacementPluginConfig,
+        CircularDependencyPluginConfig
+    ],
     // setting for devServer (npm run start)
     devServer: {
         // contentBase needs to point to same dir as `entry`
