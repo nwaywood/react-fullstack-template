@@ -10,9 +10,15 @@
     "hot-client": "webpack -d --watch",
     "hot-server": "nodemon --watch server server/app.js --exec babel-node --presets es2015",
     "serve": "babel-node server/app.js",
-    "lint": "eslint \"./app/src/**/*.js\" \"./server/**/*.js\"",
+    "lint": "eslint *",
     "format": "eslint --fix *",
-    "precommit": "npm run lint"
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "npm run lint",
+      "git add"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -46,6 +52,7 @@
     "flow-bin": "^0.42.0",
     "html-webpack-plugin": "^2.28.0",
     "husky": "^0.13.3",
+    "lint-staged": "^3.4.2",
     "nodemon": "^1.11.0",
     "prettier": "^1.2.0",
     "react-hot-loader": "^3.0.0-beta.6",
