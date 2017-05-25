@@ -3,7 +3,12 @@
 import React from "react"
 import styled from "styled-components"
 
-const Home = (props: { posts: Array<Object> }) => (
+type Props = {
+    posts: Array<Object>,
+    isFetching: boolean
+}
+
+const HomeList = (props: { posts: Array<Object> }) => (
     <div>
         <ul> {props.posts.map(renderItem)}</ul>
     </div>
@@ -14,9 +19,13 @@ const renderItem = ({ title }: { title: string }) => (
     <Li key={title}>{title}</Li>
 )
 
+// HoC for conditional rendering of the HomeList
+const withLoadingIndicator = Component => ({ isFetching, ...others }: Props) =>
+    (isFetching ? <h2>Loading...</h2> : <Component {...others} />)
+
 const Li = styled.li`
     font-size: 1.5em;
     margin: "5px 0px";
 `
 
-export default Home
+export default withLoadingIndicator(HomeList)

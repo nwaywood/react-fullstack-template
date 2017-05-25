@@ -6,6 +6,9 @@ node_modules
 .npm
 npm-debug.log
 
+# flow
+flow-typed/npm
+
 # misc
 .DS_Store
 .idea
