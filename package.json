@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/app.js",
-  "author": "Peter Ilfrich, Nick Waywood",
+  "author": "Peter Ilfrich, Dain Liffman, Nick Waywood",
   "scripts": {
     "start": "webpack-dev-server -d",
     "build": "webpack -p",
