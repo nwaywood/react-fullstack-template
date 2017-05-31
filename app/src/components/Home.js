@@ -1,7 +1,10 @@
 // @flow
 
 import React from "react"
+import { branch, renderComponent } from "recompose"
 import styled from "styled-components"
+
+import type { HOC } from "../types"
 
 type Props = {
     posts: Array<Object>,
@@ -19,13 +22,18 @@ const renderItem = ({ title }: { title: string }) => (
     <Li key={title}>{title}</Li>
 )
 
+const Loading = props => <h2>loading...</h2>
+
 // HoC for conditional rendering of the HomeList
-const withLoadingIndicator = Component => ({ isFetching, ...others }: Props) =>
-    (isFetching ? <h2>Loading...</h2> : <Component {...others} />)
+const enhance: HOC<Props> = branch(
+    props => props.isFetching,
+    renderComponent(Loading),
+    i => i
+)
 
 const Li = styled.li`
     font-size: 1.5em;
     margin: "5px 0px";
 `
 
-export default withLoadingIndicator(HomeList)
+export default enhance(HomeList)
