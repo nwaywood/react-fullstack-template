@@ -4,6 +4,8 @@ import React from "react"
 import { branch, renderComponent } from "recompose"
 import styled from "styled-components"
 
+import type { HOC } from "../types"
+
 type Props = {
     posts: Array<Object>,
     isFetching: boolean
@@ -22,18 +24,11 @@ const renderItem = ({ title }: { title: string }) => (
 
 const Loading = props => <h2>loading...</h2>
 
-type FunctionComponent<P, Context> = (
-    props: P,
-    context: Context
-) => ?React$Element<any>
-
-type Enhance = (
-    comp: FunctionComponent<Props, void>
-) => FunctionComponent<Props>
-const enhance: Enhance = branch(
+// HoC for conditional rendering of the HomeList
+const enhance: HOC<Props> = branch(
     props => props.isFetching,
     renderComponent(Loading),
-    t => t
+    i => i
 )
 
 const Li = styled.li`
