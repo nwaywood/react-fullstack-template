@@ -16,10 +16,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.js": [
-      "npm run lint",
-      "git add"
-    ]
+    "**/*.js": "eslint"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
