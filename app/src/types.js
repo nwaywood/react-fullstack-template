@@ -7,4 +7,4 @@ export type FunctionalComponent<P, Context> = (
 
 export type HOC<Props> =
     FunctionalComponent<Props, void>
- => FunctionalComponent<Props>
+ => FunctionalComponent<Props, void>
