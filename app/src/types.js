@@ -5,6 +5,6 @@ export type FunctionalComponent<P, Context> = (
     context: Context
 ) => ?React$Element<any>
 
-export type HOC<Props> =
+export type HOC<Props> = (
     FunctionalComponent<Props, void>
- => FunctionalComponent<Props, void>
+) => FunctionalComponent<Props, void>
