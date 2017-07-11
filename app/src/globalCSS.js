@@ -56,7 +56,7 @@ injectGlobal`
     }
 
     body {
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         margin: 0px;
     }
 `
