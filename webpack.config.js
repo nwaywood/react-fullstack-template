@@ -62,6 +62,10 @@ const config = {
                 query: {
                     name: "static/media/[name].[hash:8].[ext]"
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
             }
         ]
     },

@@ -10,5 +10,6 @@ npm-debug.log
 flow-typed/npm
 
 # misc
+**/*.emotion.css
 .DS_Store
 .idea

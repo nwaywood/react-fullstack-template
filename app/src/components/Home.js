@@ -2,7 +2,7 @@
 
 import React from "react"
 import { branch, renderComponent } from "recompose"
-import styled from "styled-components"
+import styled from "emotion/react"
 
 import type { HOC } from "../types"
 
