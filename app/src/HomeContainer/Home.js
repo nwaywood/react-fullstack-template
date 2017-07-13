@@ -1,6 +1,7 @@
 // @flow
 
 import React from "react"
+
 import { branch, renderComponent } from "recompose"
 import styled from "emotion/react"
 
