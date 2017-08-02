@@ -1,4 +1,4 @@
-# React/NodeJS Project Template
+# React Fullstack Template
 
 This repository contains a project template for React/NodeJS development
 
@@ -8,7 +8,6 @@ This repository contains a project template for React/NodeJS development
 1. [Development](#development)
 1. [Deployment](#deployment)
 1. [Linting and Formatting](#linting-and-formatting)
-1. [ES6 Support](#es6-support)
 
 ## Features
 
