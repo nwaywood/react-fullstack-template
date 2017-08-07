@@ -1,8 +1,4 @@
 node_modules/
-*.json
 .npm/
 dist/
 flow-typed/npm
-*.md
-*.log
-Dockerfile

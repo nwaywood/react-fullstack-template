@@ -11,8 +11,8 @@
     "hot-server": "nodemon --watch server server/app.js",
     "serve": "node server/app.js",
     "flow": "flow",
-    "lint": "eslint *",
-    "format": "eslint --fix *",
+    "lint": "eslint \"**/*.js\"",
+    "format": "eslint --fix \"**/*.js\"",
     "precommit": "lint-staged"
   },
   "lint-staged": {

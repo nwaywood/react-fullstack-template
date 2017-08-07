@@ -18,8 +18,6 @@
     "prettier"
   ],
   "rules": {
-    "no-undef": "off",
-    "no-console": "off",
     "valid-jsdoc": [
       "error",
       {
@@ -40,10 +38,10 @@
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
     "react/no-unused-prop-types": "warn",
     "prettier/prettier": ["error", { "tabWidth": 4, "semi": false }],
-    "flowtype-errors/show-errors": 2
+    "flowtype-errors/show-errors": "error"
   }
 }
