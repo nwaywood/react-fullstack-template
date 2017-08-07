@@ -19,6 +19,7 @@
     "**/*.js": "eslint"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.15.2",
     "emotion": "^5.2.0",
     "express": "^4.14.0",

@@ -34,16 +34,12 @@ class HomeContainer extends React.Component {
     }
 
     fetchData() {
-        fetch(
-            "https://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=50"
+        fetch("/api/hacker-news").then(result => result.json()).then(payload =>
+            this.setState((prevState, props) => ({
+                posts: payload.hits,
+                isFetching: false
+            }))
         )
-            .then(result => result.json())
-            .then(payload =>
-                this.setState((prevState, props) => ({
-                    posts: payload.hits,
-                    isFetching: false
-                }))
-            )
     }
 
     render() {

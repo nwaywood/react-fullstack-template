@@ -1,6 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const path = require("path")
+const setApiRoutes = require("./setApiRoutes")
 
 const app = express()
 
@@ -16,9 +17,7 @@ app.use(bodyParser.json({ limit: "1mb" }))
 /*
  * API endpoints
  */
-app.get("/api/example", (req, res) => {
-    res.send({ message: "example GET endpoint" })
-})
+setApiRoutes(app)
 
 // reroute all frontend routes to be handled by react-router
 app.get("*", (req, res) => {
