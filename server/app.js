@@ -12,7 +12,7 @@ const router = new KoaRouter()
 // Loading the environment port with default fallbacks
 const HTTP_PORT = process.env.PORT || 3000
 
-// mount static frontend to express
+// mount static frontend to koa
 app.use(koaStatic(path.join(__dirname, "..", "dist")))
 
 // mount parser for applicaton/json content
