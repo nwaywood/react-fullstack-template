@@ -20,7 +20,7 @@ This repository contains a project template for React/NodeJS development
 * [eslint](http://eslint.org)
 * [prettier](https://github.com/prettier/prettier)
 * [nodemon](http://nodemon.io)
-* [express](https://github.com/expressjs/express)
+* [koa](https://github.com/koajs/koa)
 
 ## Getting Started
 
@@ -68,7 +68,7 @@ to start the development server. If you need to communicate with the api:
 npm run hot-server
 ```
 
-and the devServer will proxy api calls to the backend express server... magic!
+and the devServer will proxy api calls to the backend koa server... magic!
 
 ## Deployment
 
