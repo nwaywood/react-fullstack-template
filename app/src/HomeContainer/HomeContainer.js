@@ -4,28 +4,23 @@ import React from "react"
 
 import Home from "./Home"
 
-class HomeContainer extends React.Component {
-    constructor(props: Object) {
-        super(props)
-        this.state = {
-            posts: [],
-            isFetching: true
-        }
+type Props = {}
+type State = {
+    posts: Array<Object>,
+    isFetching: boolean
+}
 
-        this.onRefreshClick = this.onRefreshClick.bind(this)
-    }
-
-    state: {
-        posts: Array<Object>,
-        isFetching: boolean
+class HomeContainer extends React.Component<Props, State> {
+    state = {
+        posts: [],
+        isFetching: true
     }
 
     componentDidMount() {
         this.fetchData()
     }
 
-    onRefreshClick: Function
-    onRefreshClick() {
+    onRefreshClick = () => {
         this.setState((prevState, props) => ({
             isFetching: true
         }))
@@ -33,13 +28,15 @@ class HomeContainer extends React.Component {
         this.fetchData()
     }
 
-    fetchData() {
-        fetch("/api/hacker-news").then(result => result.json()).then(payload =>
-            this.setState((prevState, props) => ({
-                posts: payload.hits,
-                isFetching: false
-            }))
-        )
+    fetchData = () => {
+        fetch("/api/hacker-news")
+            .then(result => result.json())
+            .then(payload =>
+                this.setState((prevState, props) => ({
+                    posts: payload.hits,
+                    isFetching: false
+                }))
+            )
     }
 
     render() {
