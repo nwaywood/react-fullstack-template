@@ -1,4 +1,4 @@
 {
   "presets": ["env", "stage-3", "react", "flow"],
-  "plugins": ["emotion/babel"]
+  "plugins": ["emotion/babel", "transform-class-properties"]
 }
