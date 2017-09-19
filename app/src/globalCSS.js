@@ -1,7 +1,7 @@
 /* eslint no-unused-expressions:0 */
 import { injectGlobal, fontFace } from "emotion"
-import latoRegular from "../public/assets/fonts/Lato/Lato-Regular.ttf"
-import latoBold from "../public/assets/fonts/Lato/Lato-Bold.ttf"
+import latoRegular from "~assets/fonts/Lato/Lato-Regular.ttf"
+import latoBold from "~assets/fonts/Lato/Lato-Bold.ttf"
 
 fontFace`
   font-family: 'Lato';

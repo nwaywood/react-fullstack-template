@@ -17,6 +17,11 @@
     "flowtype-errors",
     "prettier"
   ],
+  "settings": {
+    "import/resolver": {
+        "babel-module": {}
+    }
+  },
   "rules": {
     "valid-jsdoc": [
       "error",
@@ -36,7 +41,6 @@
     "no-unused-vars": ["error", { "vars": "local", "args": "none" }],
     "no-unused-expressions": ["error", { "allowTernary": true }],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",

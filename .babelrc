@@ -1,4 +1,13 @@
 {
-  "presets": ["env", "stage-3", "react", "flow"],
-  "plugins": ["emotion/babel", "transform-class-properties"]
+    "presets": ["env", "stage-3", "react", "flow"],
+    "plugins": [
+        "emotion/babel",
+        "transform-class-properties", ["module-resolver", {
+            "alias": {
+                "~": "./app/src",
+                "~assets": "./app/public/assets",
+                "~server": "./server"
+            }
+        }]
+    ]
 }
