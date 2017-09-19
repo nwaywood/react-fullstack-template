@@ -5,8 +5,7 @@
         "transform-class-properties", ["module-resolver", {
             "alias": {
                 "~": "./app/src",
-                "~assets": "./app/public/assets",
-                "~server": "./server"
+                "~assets": "./app/public/assets"
             }
         }]
     ]

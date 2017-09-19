@@ -1,4 +1,3 @@
 [options]
 module.name_mapper='^~/\(.*\)$' -> '<PROJECT_ROOT>/app/src/\1'
 module.name_mapper='^~assets/\(.*\)$' -> '<PROJECT_ROOT>/app/public/assets/\1'
-module.name_mapper='^~server\^/\(.*\)$' -> '<PROJECT_ROOT>/app/server/\1'
