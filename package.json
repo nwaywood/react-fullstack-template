@@ -7,9 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server -d",
     "build": "webpack -p",
-    "hot-client": "webpack -d --watch",
-    "hot-server": "nodemon --watch server server/app.js",
     "serve": "node server/app.js",
+    "serve:watch": "nodemon --watch server server/app.js",
     "flow": "flow",
     "lint": "eslint \"**/*.js\"",
     "format": "eslint --fix \"**/*.js\"",
