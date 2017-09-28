@@ -26,7 +26,7 @@ router.use("/api", apiRouter.routes(), apiRouter.allowedMethods())
 
 // reroute all frontend routes to be handled by react-router
 router.get("*", async ctx => {
-    await koaSend(ctx, path.join(__dirname, "..", "dist", "index.html"))
+    await koaSend(ctx, "dist/index.html")
 })
 
 app.use(router.routes())
