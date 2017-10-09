@@ -37,6 +37,11 @@ class HomeContainer extends React.Component<Props, State> {
                     isFetching: false
                 }))
             )
+            .catch(error => {
+                this.setState(state => {
+                    throw error
+                })
+            })
     }
 
     render() {
