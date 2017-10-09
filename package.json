@@ -2,22 +2,26 @@
   "name": "react-template-nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "server/app.js",
+  "main": "server/app.mjs",
   "author": "Peter Ilfrich, Dain Liffman, Nick Waywood",
   "scripts": {
     "start": "webpack-dev-server -d",
     "build": "webpack -p",
-    "serve": "node server/app.js",
-    "serve:watch": "nodemon --watch server server/app.js",
+    "serve": "node -r @std/esm server/app",
+    "serve:watch": "nodemon -r @std/esm --watch server server/app",
     "flow": "flow",
-    "lint": "eslint \"**/*.js\"",
-    "format": "eslint --fix \"**/*.js\"",
+    "lint": "eslint \"**/*.{js,mjs}\"",
+    "format": "eslint --fix \"**/*.{js,mjs}\"",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "**/*.js": "eslint"
+    "**/*.{js,mjs}": "eslint"
+  },
+  "@std/esm": {
+    "cjs": true
   },
   "dependencies": {
+    "@std/esm": "^0.11.3",
     "axios": "^0.16.2",
     "emotion": "^7.3.2",
     "jsx": "^0.9.89",

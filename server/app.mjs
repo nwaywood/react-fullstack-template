@@ -1,10 +1,10 @@
-const Koa = require("koa")
-const koaStatic = require("koa-static")
-const koaBodyParser = require("koa-bodyparser")
-const KoaRouter = require("koa-router")
-const koaSend = require("koa-send")
-const path = require("path")
-const createApiRouter = require("./createApiRouter")
+import Koa from "koa"
+import koaStatic from "koa-static"
+import koaBodyParser from "koa-bodyparser"
+import KoaRouter from "koa-router"
+import koaSend from "koa-send"
+import path from "path"
+import createApiRouter from "./createApiRouter"
 
 const app = new Koa()
 const router = new KoaRouter()

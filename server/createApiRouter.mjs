@@ -1,7 +1,7 @@
-const KoaRouter = require("koa-router")
-const axios = require("axios")
+import KoaRouter from "koa-router"
+import axios from "axios"
 
-module.exports = () =>
+export default () =>
     new KoaRouter()
         .get("/example", async ctx => {
             ctx.body = { message: "example GET endpoint" }

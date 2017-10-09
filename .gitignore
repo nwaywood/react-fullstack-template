@@ -11,5 +11,6 @@ flow-typed/npm
 
 # misc
 **/*.emotion.css
+.esm-cache
 .DS_Store
 .idea

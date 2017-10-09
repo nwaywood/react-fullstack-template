@@ -1,9 +1,17 @@
 {
     "extends": "../.eslintrc.json",
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".mjs"]
+            }
+        }
+    },
     "env": {
         "node": true
     },
     "rules": {
-        "no-console": "off"
+        "no-console": "off",
+        "import/extensions": ["error", "never"]
     }
 }
