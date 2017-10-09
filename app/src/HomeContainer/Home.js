@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { branch, renderComponent } from "recompose"
-import styled from "emotion/react"
+import styled from "react-emotion"
 
 type Props = {
     posts: Array<Object>,
