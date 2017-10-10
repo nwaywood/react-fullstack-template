@@ -9,10 +9,7 @@ type State = {
     hasError: boolean
 }
 
-export default class HomeContainerErrorBoundary extends React.Component<
-    Props,
-    State
-> {
+export default class AppErrorBoundary extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
         this.state = { hasError: false }
