@@ -37,6 +37,12 @@ From the root directory, install the project dependencies and check that it work
 
 ```bash
 npm install           # install dependencies
+npm run serve         # run the server
+```
+
+and then from another terminal:
+
+```bash
 npm start             # compile and launch
 ```
 
@@ -63,10 +69,10 @@ Note: The structure of domain specific components within `/src` follow the `pres
 npm start
 ```
 
-to start the development server. If you need to communicate with the api:
+to start the development server. And to communicate with the api:
 
 ```bash
-npm run hot-server
+npm run serve:watch
 ```
 
 and the devServer will proxy api calls to the backend koa server... magic!
