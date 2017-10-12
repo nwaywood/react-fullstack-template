@@ -3,17 +3,15 @@
 import * as React from "react"
 
 type Props = {
-    children?: React.Node
+    children: React.Node
 }
+
 type State = {
     hasError: boolean
 }
 
 export default class AppErrorBoundary extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props)
-        this.state = { hasError: false }
-    }
+    state = { hasError: false }
 
     componentDidCatch(error: Error) {
         // Display fallback UI
