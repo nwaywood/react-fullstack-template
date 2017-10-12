@@ -8,6 +8,7 @@ This repository contains a project template for React/NodeJS development
 1. [Development](#development)
 1. [Deployment](#deployment)
 1. [Linting and Formatting](#linting-and-formatting)
+1. [History](#history)
 
 ## Features
 
@@ -43,15 +44,15 @@ npm start             # compile and launch
 
 ```
 .
-├── app                  # Frontend application
-│   ├── public           # Static resources (html, images etc)
-│   └── src              # Source code, which is bundled into the `dist` folder by `webpack`
-│       ├── index.js     # The entrypoint for the React application
-│       ├── types.js     # Global flow type definitions
-│       ├── globalCSS.js # Any global CSS used in the application (should be kept to a minimum)
-│       └── ...          # Domain specific components
-├── dist                 # Build directory, which is served by the server as static directory
-└── server               # Root folder for server code
+├── app                            # Frontend application
+│   ├── public                     # Static resources (html, images etc)
+│   └── src                        # Source code, which is bundled into the `dist` folder by `webpack`
+│       ├── index.js               # The entrypoint for the React application
+│       ├── AppErrorBoundary.js    # Generic top level Error Boundary for the application
+│       ├── globalCSS.js           # Any global CSS used in the application (should be kept to a minimum)
+│       └── ...                    # Domain specific components
+├── dist                           # Build directory, which is served by the server as static directory
+└── server                         # Root folder for server code
 ```
 
 Note: The structure of domain specific components within `/src` follow the `presentational` vs `component` model. Refer to [this](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.469taxbj0) blog post for more information
@@ -95,3 +96,7 @@ PORT=4000 node server/app.js
 This project uses `prettier` integrated with `eslint` to show formatting errors via `eslint`. To automatically fix
 these formatting errors you can run `npm run format`. However, it is recommended to integrate this functionality with
 your editor to improve the development workflow.
+
+## History
+
+For an overview of the evolution of this template and key design decisions we have made, see [here](https://github.com/nwaywood/react-fullstack-template/tree/master/history.md)
