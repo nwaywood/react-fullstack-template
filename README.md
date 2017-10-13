@@ -28,7 +28,7 @@ This repository contains a project template for React/NodeJS development
 Setup directory for project:
 
 ```bash
-git clone git@github.ibm.com:aur/react-template-nodejs.git <your-project-name>
+git clone git@github.com:nwaywood/react-fullstack-template.git <your-project-name>
 cd <your-project-name>
 rm -rf .git
 ```
