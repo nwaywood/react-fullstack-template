@@ -25,6 +25,8 @@ This repository contains a project template for React/NodeJS development
 
 ## Getting Started
 
+Note: node 7.6 or later is required for this template to work since it uses ES6 generators
+
 Setup directory for project:
 
 ```bash
