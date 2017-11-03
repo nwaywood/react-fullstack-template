@@ -2,3 +2,4 @@ node_modules/
 .npm/
 dist/
 flow-typed/npm
+lib/es6

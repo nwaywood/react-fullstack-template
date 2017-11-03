@@ -1,0 +1,15 @@
+{
+  "name": "reason-template",
+  "reason": {
+    "react-jsx": 2
+  },
+  "package-specs": [
+    {
+      "module": "es6"
+    }
+  ],
+  "bsc-flags": ["-bs-super-errors"],
+  "bs-dependencies": ["reason-react"],
+  "sources": "app/src",
+  "refmt": 3
+}

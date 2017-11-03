@@ -45,6 +45,11 @@ const config = {
                 // config for babel-loader is in .babelrc
                 use: ["react-hot-loader/webpack", "babel-loader"]
             },
+            {
+                test: /\.(re|ml)$/,
+                // will use the config in bsconfig.json
+                use: "bs-loader"
+            },
             // The "url" loader handles all assets specified by the test regex.
             // "url" loader embeds assets smaller than specified size as data URLs to avoid requests.
             // Otherwise, it acts like the "file" loader.

@@ -3,6 +3,7 @@
 import React from "react"
 
 import Home from "./Home"
+import Greeting from "../Greeting.re"
 
 type Props = {}
 type State = {
@@ -52,7 +53,10 @@ class HomeContainer extends React.Component<Props, State> {
                 {this.state.isFetching ? (
                     <Loading />
                 ) : (
-                    <Home posts={this.state.posts} />
+                    <div>
+                        <Greeting />
+                        <Home posts={this.state.posts} />
+                    </div>
                 )}
             </div>
         )
