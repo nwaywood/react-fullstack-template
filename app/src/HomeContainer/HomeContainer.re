@@ -6,7 +6,6 @@ type state = {
   isFetching: bool
 };
 
-/* let fetchPosts = HackerNewsData.fetchPosts(self.reduce((data) => HackerData(data))) */
 let component = ReasonReact.reducerComponent("HomeComponent");
 
 let fetchPosts = (reduce) =>
