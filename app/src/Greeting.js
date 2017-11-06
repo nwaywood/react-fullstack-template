@@ -2,15 +2,16 @@
 'use strict';
 
 import * as React       from "react";
+import * as MessageRe   from "./MessageRe.js";
 import * as GreetingTwo from "./GreetingTwo.js";
-import * as ReasonReact from "reason-react/lib/es6/src/reasonReact.js";
+import * as ReasonReact from "reason-react/src/reasonReact.js";
 
 var component = ReasonReact.statelessComponent("Greeting");
 
 function make() {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function () {
-      return React.createElement("div", undefined, React.createElement("button", undefined, "Hello!"), ReasonReact.element(/* None */0, /* None */0, GreetingTwo.make(/* array */[])));
+      return React.createElement("div", undefined, React.createElement("button", undefined, "Hello!"), ReasonReact.element(/* None */0, /* None */0, GreetingTwo.make(/* array */[])), ReasonReact.element(/* None */0, /* None */0, MessageRe.make("Test", /* array */[])));
     });
   return newrecord;
 }

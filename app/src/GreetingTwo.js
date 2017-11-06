@@ -2,7 +2,7 @@
 'use strict';
 
 import * as React       from "react";
-import * as ReasonReact from "reason-react/lib/es6/src/reasonReact.js";
+import * as ReasonReact from "reason-react/src/reasonReact.js";
 
 var component = ReasonReact.statelessComponent("GreetingTwo");
 
