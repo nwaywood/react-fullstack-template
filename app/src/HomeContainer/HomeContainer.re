@@ -8,8 +8,7 @@ type state = {
 
 let component = ReasonReact.reducerComponent("HomeComponent");
 
-let fetchPosts = (reduce) =>
-  HackerNewsData.fetchPosts(reduce((data) => HackerData(data)));
+let fetchPosts = (reduce) => HackerNewsData.fetchPosts(reduce((data) => HackerData(data)));
 
 let make = (_children) => {
   ...component,
@@ -24,12 +23,10 @@ let make = (_children) => {
   },
   render: (self) =>
     <div>
-      <button onClick=((_event) => fetchPosts(self.reduce))>
-        (ReasonReact.stringToElement("Refresh"))
-      </button>
+      <button onClick=((_event) => fetchPosts(self.reduce))> (Utils.textEl("Refresh")) </button>
       (
         self.state.isFetching ?
-          <h2> (ReasonReact.stringToElement("loading...")) </h2> :
+          <h2> (Utils.textEl("loading...")) </h2> :
           <div> <Greeting /> <Home posts=self.state.posts /> </div>
       )
     </div>

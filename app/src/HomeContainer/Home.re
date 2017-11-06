@@ -7,12 +7,12 @@ let make = (~posts: array(HackerNewsData.post), _children) => {
       posts
       |> Array.map(
            (post: HackerNewsData.post) =>
-             <li key=post.title
+             <li
+               key=post.title
                style=(ReactDOMRe.Style.make(~margin="5px 0px", ~fontSize="1.5em", ()))>
-               (ReasonReact.stringToElement(post.title))
+               (Utils.textEl(post.title))
              </li>
          );
-    Js.log(postElements);
     <div> <ul> (ReasonReact.arrayToElement(postElements)) </ul> </div>
   }
 };
