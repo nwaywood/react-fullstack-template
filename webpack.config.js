@@ -74,6 +74,10 @@ const config = {
             }
         ]
     },
+    resolve: {
+        // Add .re and .ml to the list of extensions webpack recognizes
+        extensions: [".re", ".ml", ".js"]
+    },
     plugins: [
         HTMLWebpackPluginConfig,
         HotModuleReplacementPluginConfig,

@@ -5,8 +5,7 @@
   },
   "package-specs": [
     {
-      "module": "es6",
-      "in-source": true
+      "module": "es6"
     }
   ],
   "bsc-flags": ["-bs-super-errors"],
