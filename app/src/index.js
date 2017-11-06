@@ -6,7 +6,7 @@ import { render } from "react-dom"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 
 import "./globalCSS"
-import HomeContainer from "./HomeContainer/HomeContainer"
+import HomeContainer from "./HomeContainer/HomeContainer.re"
 import AppErrorBoundary from "./AppErrorBoundary"
 import Header from "./Header"
 import About from "./About/About"

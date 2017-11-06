@@ -9,7 +9,7 @@
     }
   ],
   "bsc-flags": ["-bs-super-errors"],
-  "bs-dependencies": ["reason-react"],
+  "bs-dependencies": ["reason-react", "bs-fetch", "bs-json"],
   "sources": {
     "dir": "app/src",
     "subdirs": true
