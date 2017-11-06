@@ -1,6 +1,6 @@
 let component = ReasonReact.statelessComponent("GreetingTwo");
 
-let make = (_children) => {
+let make = (~pickupLine: string, _children) => {
   ...component,
-  render: (_self) => <div> <button> (ReasonReact.stringToElement("World!")) </button> </div>
+  render: (_self) => <div> <button> {ReasonReact.stringToElement("World!")} {ReasonReact.stringToElement(pickupLine)}</button> </div>
 };

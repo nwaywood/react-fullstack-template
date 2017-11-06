@@ -10,6 +10,9 @@
   ],
   "bsc-flags": ["-bs-super-errors"],
   "bs-dependencies": ["reason-react"],
-  "sources": "app/src",
+  "sources": {
+    "dir": "app/src",
+    "subdirs": true
+  },
   "refmt": 3
 }

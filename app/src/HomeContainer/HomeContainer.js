@@ -2,8 +2,8 @@
 
 import React from "react"
 
-import Home from "./Home"
 import Greeting from "../Greeting.re"
+import Home from "./Home.re"
 
 type Props = {}
 type State = {
