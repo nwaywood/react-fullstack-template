@@ -27,7 +27,7 @@ let make = (_children) => {
       (
         self.state.isFetching ?
           <h2> (Utils.textEl("loading...")) </h2> :
-          <div> <Greeting /> <Home posts=self.state.posts /> </div>
+          <div> <Greeting /> <HomeRe posts=self.state.posts /> </div>
       )
     </div>
 };
