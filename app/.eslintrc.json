@@ -1,9 +1,6 @@
 {
-    "extends": "../.eslintrc.json",
-    "env": {
-        "browser": true
-    },
-    "rules": {
-        "no-console": "warn"
-    }
+  "extends": "../.eslintrc.json",
+  "env": {
+    "browser": true
+  }
 }
