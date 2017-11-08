@@ -17,7 +17,7 @@ render(
             <Header />
             <div id="main">
                 <AppErrorBoundary>
-                    {<Route exact path="/" component={HomeContainer} />}
+                    <Route exact path="/" component={HomeContainer} />
                     <Route path="/about" component={About} />
                 </AppErrorBoundary>
             </div>
