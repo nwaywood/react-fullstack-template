@@ -26,8 +26,7 @@ let make = (_children) => {
       <button onClick=((_event) => fetchPosts(self.reduce))> (Utils.textEl("Refresh")) </button>
       (
         self.state.isFetching ?
-          <h2> (Utils.textEl("loading...")) </h2> :
-          <div> <Greeting /> <HomeRe posts=self.state.posts /> </div>
+          <h2> (Utils.textEl("loading...")) </h2> : <div> <Home posts=self.state.posts /> </div>
       )
     </div>
 };

@@ -7,9 +7,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom"
 
 import "./globalCSS"
 import HomeContainer from "./HomeContainer/HomeContainer.re"
+import About from "./About/About.re"
 import AppErrorBoundary from "./AppErrorBoundary"
 import Header from "./Header"
-import About from "./About/About"
 
 render(
     <Router>

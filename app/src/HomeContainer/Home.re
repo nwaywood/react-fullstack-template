@@ -3,8 +3,6 @@ let component = ReasonReact.statelessComponent("Home");
 let make = (~posts: array(HackerNewsData.post), _children) => {
   ...component,
   render: (_self) => {
-    Js.log("poop");
-    Js.log(posts);
     let postElements =
       posts
       |> Array.map(
