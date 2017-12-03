@@ -1,10 +1,4 @@
-# We use node:7.4.0-alpine because it is much smaller
-# than the official node image and it is just what we
-# need to run the node application.
-#
-FROM node:7.5.0-alpine
-
-MAINTAINER Christian Vecchiola
+FROM node:8.5.0-alpine
 
 LABEL solution="Solution Name"
 LABEL component="Component Name"
@@ -25,16 +19,16 @@ RUN apk update && apk upgrade && \
 WORKDIR /opt/app
 
 # We copy the package.json to leverage the layer caching
-# capabilities of Docker. If the package.json is not 
+# capabilities of Docker. If the package.json is not
 # changed, the build process will not run the npm install
 # command, which is the next command in the Dockerfile.
-# 
+#
 # The rationale behind this is the following: if the package.json
 # is not changed, Docker will use the previously cached layer
 # (outcome of previous image builds). When it comes to execute
 # the next instruction, which is unchanged it will be able to
 # reuse a previously cached layer associated to the instruction
-# "RUN npm install" which has not changed. 
+# "RUN npm install" which has not changed.
 #
 COPY ./package.json /opt/app/package.json
 
@@ -46,17 +40,16 @@ COPY ./package.json /opt/app/package.json
 # NOTE: this optimisation ONLY WORKS if we used fixed versions
 #       of the packages in the package.json and we do not have
 #       any wildcards, which would make npm lookup for new and
-#       updated versions. In this case the updates would not 
+#       updated versions. In this case the updates would not
 #       be pulled in because the cached layer has been re-used.
 #       This should not be a problem for a production deployment
 #       where we should always fix versions.
 #
 RUN npm install
-	
+
 
 # We copy the rest of the application, this will override the
-# previously copied files, but they're the same so we don't
-# bother.
+# previously copied files
 #
 COPY .babelrc /opt/app/.babelrc
 COPY server /opt/app/server
@@ -67,17 +60,7 @@ COPY webpack.config.js /opt/app/webpack.config.js
 # application files so that we can prepare the application for
 # packageing and distribution.
 #
-RUN chown -R npm /opt/app && npm run build 
-
-# NOTE: there is no point in removing source files because they
-#       will be available in the image as part of its build
-#       history. The only reason to remove the source files
-#       after a build would be reduce a possible attach surface
-#       and prevent an hostile environment from looking at the
-#       source code during container inspection. These files
-#       would still be available in the image that was used to
-#       create the container.
-
+RUN chown -R npm /opt/app && npm run build
 
 USER npm
 
