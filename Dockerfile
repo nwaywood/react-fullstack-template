@@ -1,21 +1,8 @@
-FROM node:8.5.0-alpine
+FROM node:8
 
-LABEL solution="Solution Name"
-LABEL component="Component Name"
+LABEL solution="Micro-Insurance"
+LABEL component="dashboard"
 
-# Some commands do not like to be run in superuser mode
-# We create a user to be sure that we don't
-# have issues while running the build script.
-#
-# See best practices on how to run node applications in Docker here:
-# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
-#
-RUN addgroup -S npm && adduser -S -g npm npm
-
-# Alpine does not come with git installed, so we add it.
-#
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh build-base g++
 WORKDIR /opt/app
 
 # We copy the package.json to leverage the layer caching
@@ -32,19 +19,6 @@ WORKDIR /opt/app
 #
 COPY ./package.json /opt/app/package.json
 
-# If the package.json has not changed, the previous layer has 
-# not changed, so this layer is not changed either and the
-# command will not be re-executed but the associated layer
-# will be added to the image.
-#
-# NOTE: this optimisation ONLY WORKS if we used fixed versions
-#       of the packages in the package.json and we do not have
-#       any wildcards, which would make npm lookup for new and
-#       updated versions. In this case the updates would not
-#       be pulled in because the cached layer has been re-used.
-#       This should not be a problem for a production deployment
-#       where we should always fix versions.
-#
 RUN npm install
 
 
@@ -56,13 +30,8 @@ COPY server /opt/app/server
 COPY app /opt/app/app
 COPY webpack.config.js /opt/app/webpack.config.js
 
-# We execute the webpack transpilation once we have copied the
-# application files so that we can prepare the application for
-# packageing and distribution.
-#
-RUN chown -R npm /opt/app && npm run build
 
-USER npm
+RUN npm run build
 
 # This is to prevent that the command gets overridden from
 # outside.
@@ -72,3 +41,5 @@ ENTRYPOINT ["npm"]
 # This is to specify which command to run with NPM.
 #
 CMD ["run", "serve"]
+
+EXPOSE 3000

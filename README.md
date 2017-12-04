@@ -88,7 +88,7 @@ npm run build          # compile project into /dist folder
 then you can serve the production app with
 
 ```bash
-node server/app.js
+npm run serve
 ```
 
 By default the production server listens on port `3000`
@@ -96,8 +96,18 @@ By default the production server listens on port `3000`
 If you want to run the application on port other than `3000`, simply define it as environment variable:
 
 ```bash
-PORT=4000 node server/app.js
+PORT=4000 npm run serve
 ```
+
+### Docker
+
+Build the docker image:
+
+`docker build -t YOUR_IMAGE_NAME .`
+
+Run the container:
+
+`docker run -it -p 3000:3000 --name YOUR_CONTAINER_NAME YOUR_IMAGE_NAME`
 
 ## Linting and Formatting
 
