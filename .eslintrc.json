@@ -1,9 +1,6 @@
 {
   "root": true,
   "parser": "babel-eslint",
-  "env": {
-    "node": true
-  },
   "extends": [
     "airbnb",
     "plugin:flowtype/recommended",
@@ -46,6 +43,12 @@
     "react/prop-types": "off",
     "react/no-unused-prop-types": "warn",
     "prettier/prettier": ["error", { "tabWidth": 4, "semi": false }],
-    "flowtype-errors/show-errors": "error"
+    "flowtype-errors/show-errors": "error",
+    "jsx-a11y/heading-has-content": "off",
+    "jsx-a11y/anchor-is-valid": [ "error", {
+        "components": [ "Link" ],
+        "specialLink": [ "to" ],
+        "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }]
   }
 }

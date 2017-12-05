@@ -11,6 +11,11 @@ import AppErrorBoundary from "./AppErrorBoundary"
 import Header from "./Header"
 import About from "./About/About"
 
+const root = document.getElementById("root")
+if (!root) {
+    throw new Error("Error could not find root element")
+}
+
 render(
     <Router>
         <div>
@@ -23,5 +28,5 @@ render(
             </div>
         </div>
     </Router>,
-    document.getElementById("root")
+    root
 )
