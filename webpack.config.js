@@ -14,11 +14,9 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 // TODO: re-enable multi-pass compilation for enhanced performance in larger projects when https://github.com/jantimon/html-webpack-plugin/issues/533 is fixed
-const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin(
-    {
-        multiStep: false
-    }
-)
+const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin({
+    multiStep: false
+})
 const CircularDependencyPluginConfig = new CircularDependencyPlugin({
     // exclude detection of files based on a RegExp
     exclude: /a\.js|node_modules/,
@@ -69,11 +67,7 @@ const config = {
             }
         ]
     },
-    plugins: [
-        HTMLWebpackPluginConfig,
-        HotModuleReplacementPluginConfig,
-        CircularDependencyPluginConfig
-    ],
+    plugins: [HTMLWebpackPluginConfig, HotModuleReplacementPluginConfig, CircularDependencyPluginConfig],
     // setting for devServer (npm run start)
     devServer: {
         // contentBase needs to point to same dir as `entry`
