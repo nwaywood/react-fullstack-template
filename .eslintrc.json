@@ -42,7 +42,7 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
     "react/no-unused-prop-types": "warn",
-    "prettier/prettier": ["error", { "tabWidth": 4, "semi": false }],
+    "prettier/prettier": ["error", { "tabWidth": 4, "semi": false, "printWidth": 120 }],
     "flowtype-errors/show-errors": "error",
     "jsx-a11y/heading-has-content": "off",
     "jsx-a11y/anchor-is-valid": [ "error", {
