@@ -49,11 +49,7 @@ class HomeContainer extends React.Component<Props, State> {
         return (
             <div>
                 <button onClick={this.onRefreshClick}>Refresh</button>
-                {this.state.isFetching ? (
-                    <Loading />
-                ) : (
-                    <Home posts={this.state.posts} />
-                )}
+                {this.state.isFetching ? <Loading /> : <Home posts={this.state.posts} />}
             </div>
         )
     }
