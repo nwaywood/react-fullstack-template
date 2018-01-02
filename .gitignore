@@ -9,6 +9,10 @@ npm-debug.log
 # flow
 flow-typed/npm
 
+# reason
+lib/bs
+.merlin
+
 # misc
 **/*.emotion.css
 .esm-cache
