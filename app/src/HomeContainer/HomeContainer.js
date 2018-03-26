@@ -1,6 +1,7 @@
 // @flow
 
 import React from "react"
+import axios from "axios"
 
 import Home from "./Home"
 
@@ -29,11 +30,10 @@ class HomeContainer extends React.Component<Props, State> {
     }
 
     fetchData = () => {
-        fetch("/api/hacker-news")
-            .then(result => result.json())
-            .then(payload =>
+        axios("/api/hacker-news")
+            .then(({ data }) =>
                 this.setState((prevState, props) => ({
-                    posts: payload.hits,
+                    posts: data.hits,
                     isFetching: false
                 }))
             )
