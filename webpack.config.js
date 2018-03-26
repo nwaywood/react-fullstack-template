@@ -1,4 +1,3 @@
-const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CircularDependencyPlugin = require("circular-dependency-plugin")
 const path = require("path")
@@ -13,10 +12,6 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     inject: true
 })
 
-// TODO: re-enable multi-pass compilation for enhanced performance in larger projects when https://github.com/jantimon/html-webpack-plugin/issues/533 is fixed
-const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin({
-    multiStep: false
-})
 const CircularDependencyPluginConfig = new CircularDependencyPlugin({
     // exclude detection of files based on a RegExp
     exclude: /a\.js|node_modules/,
@@ -41,7 +36,7 @@ const config = {
                 // babel loader for ES6 tranpilation and
                 // react-hot for HMR of react components
                 // config for babel-loader is in .babelrc
-                use: ["react-hot-loader/webpack", "babel-loader"]
+                use: ["babel-loader"]
             },
             // The "url" loader handles all assets specified by the test regex.
             // "url" loader embeds assets smaller than specified size as data URLs to avoid requests.
@@ -67,7 +62,7 @@ const config = {
             }
         ]
     },
-    plugins: [HTMLWebpackPluginConfig, HotModuleReplacementPluginConfig, CircularDependencyPluginConfig],
+    plugins: [HTMLWebpackPluginConfig, CircularDependencyPluginConfig],
     // setting for devServer (npm run start)
     devServer: {
         // contentBase needs to point to same dir as `entry`

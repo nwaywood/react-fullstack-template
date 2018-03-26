@@ -1,6 +1,7 @@
 {
     "presets": ["env", "stage-3", "react", "flow"],
     "plugins": [
+        "react-hot-loader/babel",
         "emotion",
         "transform-class-properties", ["module-resolver", {
             "alias": {
