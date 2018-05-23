@@ -1,8 +1,5 @@
 FROM node:8
 
-LABEL solution="Micro-Insurance"
-LABEL component="dashboard"
-
 WORKDIR /opt/app
 
 # We copy the package.json to leverage the layer caching
@@ -17,7 +14,8 @@ WORKDIR /opt/app
 # reuse a previously cached layer associated to the instruction
 # "RUN npm install" which has not changed.
 #
-COPY ./package.json /opt/app/package.json
+COPY package.json package.json
+COPY package-lock.json package-lock.json
 
 RUN npm install
 
@@ -25,11 +23,7 @@ RUN npm install
 # We copy the rest of the application, this will override the
 # previously copied files
 #
-COPY .babelrc /opt/app/.babelrc
-COPY server /opt/app/server
-COPY app /opt/app/app
-COPY webpack.config.js /opt/app/webpack.config.js
-
+COPY . .
 
 RUN npm run build
 
