@@ -1,5 +1,5 @@
 {
-    "presets": ["env", "stage-3", "react", "flow"],
+    "presets": ["@babel/preset-react", "@babel/preset-flow"],
     "plugins": [
         "react-hot-loader/babel",
         "emotion",
@@ -9,5 +9,6 @@
                 "~assets": "./app/public/assets"
             }
         }]
-    ]
+    ],
+    "env": { "test": { "presets": ["env", "next/babel"] } }
 }
