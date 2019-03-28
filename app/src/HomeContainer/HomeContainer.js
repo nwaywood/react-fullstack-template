@@ -46,10 +46,11 @@ class HomeContainer extends React.Component<Props, State> {
 
     render() {
         const Loading = () => <h2>loading...</h2>
+        const { isFetching, posts } = this.state
         return (
             <div>
                 <button onClick={this.onRefreshClick}>Refresh</button>
-                {this.state.isFetching ? <Loading /> : <Home posts={this.state.posts} />}
+                {isFetching ? <Loading /> : <Home posts={posts} />}
             </div>
         )
     }
