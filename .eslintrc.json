@@ -1,61 +1,61 @@
 {
-    "root": true,
-    "parser": "babel-eslint",
-    "extends": [
-        "airbnb",
-        "plugin:flowtype/recommended",
-        "prettier",
-        "prettier/react"
-    ],
-    "plugins": ["react", "import", "flowtype", "flowtype-errors", "prettier"],
-    "settings": {
-        "import/resolver": {
-            "babel-module": {}
-        }
-    },
-    "rules": {
-        "valid-jsdoc": [
-            "error",
-            {
-                "prefer": {
-                    "arg": "param",
-                    "return": " returns"
-                },
-                "requireReturnType": false,
-                "requireReturn": false
-            }
-        ],
-        "no-use-before-define": "off",
-        "no-param-reassign": ["error", { "props": false }],
-        "no-underscore-dangle": ["warn", { "allow": ["_id", "_rev", "_path"] }],
-        "handle-callback-err": "error",
-        "no-unused-vars": ["error", { "vars": "local", "args": "none" }],
-        "no-unused-expressions": ["error", { "allowTernary": true }],
-        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-        "import/no-extraneous-dependencies": [
-            "error",
-            { "devDependencies": true }
-        ],
-        "react/jsx-filename-extension": [
-            "warn",
-            { "extensions": [".js", ".jsx"] }
-        ],
-        "react/prop-types": "off",
-        "react/no-unused-prop-types": "warn",
-        "react/button-has-type": 0,
-        "prettier/prettier": [
-            "error",
-            { "tabWidth": 4, "semi": false, "printWidth": 120 }
-        ],
-        "flowtype-errors/show-errors": "error",
-        "jsx-a11y/heading-has-content": "off",
-        "jsx-a11y/anchor-is-valid": [
-            "error",
-            {
-                "components": ["Link"],
-                "specialLink": ["to"],
-                "aspects": ["noHref", "invalidHref", "preferButton"]
-            }
-        ]
-    }
+	"root": true,
+	"parser": "babel-eslint",
+	"extends": [
+		"airbnb",
+		"plugin:flowtype/recommended",
+		"prettier",
+		"prettier/react"
+	],
+	"plugins": ["react", "import", "flowtype", "flowtype-errors", "prettier"],
+	"settings": {
+		"import/resolver": {
+			"babel-module": {}
+		}
+	},
+	"rules": {
+		"valid-jsdoc": [
+			"error",
+			{
+				"prefer": {
+					"arg": "param",
+					"return": " returns"
+				},
+				"requireReturnType": false,
+				"requireReturn": false
+			}
+		],
+		"no-use-before-define": "off",
+		"no-param-reassign": ["error", { "props": false }],
+		"no-underscore-dangle": ["warn", { "allow": ["_id", "_rev", "_path"] }],
+		"handle-callback-err": "error",
+		"no-unused-vars": ["error", { "vars": "local", "args": "none" }],
+		"no-unused-expressions": ["error", { "allowTernary": true }],
+		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+		"import/no-extraneous-dependencies": [
+			"error",
+			{ "devDependencies": true }
+		],
+		"react/jsx-filename-extension": [
+			"warn",
+			{ "extensions": [".js", ".jsx"] }
+		],
+		"react/prop-types": "off",
+		"react/no-unused-prop-types": "warn",
+		"react/button-has-type": 0,
+		"prettier/prettier": [
+			"error",
+			{ "tabWidth": 4, "semi": false, "printWidth": 120 }
+		],
+		"flowtype-errors/show-errors": "error",
+		"jsx-a11y/heading-has-content": "off",
+		"jsx-a11y/anchor-is-valid": [
+			"error",
+			{
+				"components": ["Link"],
+				"specialLink": ["to"],
+				"aspects": ["noHref", "invalidHref", "preferButton"]
+			}
+		]
+	}
 }
