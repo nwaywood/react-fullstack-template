@@ -1,13 +1,16 @@
 {
-    "presets": ["@babel/preset-react", "@babel/preset-flow"],
-    "plugins": [
-        "emotion",
-        "transform-class-properties", ["module-resolver", {
-            "alias": {
-                "~": "./app/src",
-                "~assets": "./app/public/assets"
-            }
-        }]
-    ],
-    "env": { "test": { "presets": ["env", "next/babel"] } }
+	"presets": ["@babel/preset-react", "@babel/preset-flow"],
+	"plugins": [
+		"emotion",
+		"@babel/plugin-proposal-class-properties",
+		[
+			"module-resolver",
+			{
+				"alias": {
+					"~": "./app/src",
+					"~assets": "./app/public/assets"
+				}
+			}
+		]
+	]
 }

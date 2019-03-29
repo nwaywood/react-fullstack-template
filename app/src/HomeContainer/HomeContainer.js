@@ -30,13 +30,15 @@ class HomeContainer extends React.Component<Props, State> {
     }
 
     fetchData = () => {
-        axios("/api/hacker-news")
-            .then(({ data }) =>
+        axios
+            .get("/api/hacker-news")
+            .then(({ data }) => {
+                console.log(data)
                 this.setState((prevState, props) => ({
                     posts: data.hits,
                     isFetching: false
                 }))
-            )
+            })
             .catch(error => {
                 this.setState(state => {
                     throw error
