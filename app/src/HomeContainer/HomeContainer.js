@@ -30,13 +30,15 @@ class HomeContainer extends React.Component<Props, State> {
     }
 
     fetchData = () => {
-        axios("/api/hacker-news")
-            .then(({ data }) =>
+        axios
+            .get("/api/hacker-news")
+            .then(({ data }) => {
+                console.log(data)
                 this.setState((prevState, props) => ({
                     posts: data.hits,
                     isFetching: false
                 }))
-            )
+            })
             .catch(error => {
                 this.setState(state => {
                     throw error
@@ -46,10 +48,11 @@ class HomeContainer extends React.Component<Props, State> {
 
     render() {
         const Loading = () => <h2>loading...</h2>
+        const { isFetching, posts } = this.state
         return (
             <div>
                 <button onClick={this.onRefreshClick}>Refresh</button>
-                {this.state.isFetching ? <Loading /> : <Home posts={this.state.posts} />}
+                {isFetching ? <Loading /> : <Home posts={posts} />}
             </div>
         )
     }

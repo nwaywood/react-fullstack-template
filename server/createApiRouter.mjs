@@ -13,7 +13,7 @@ export default () =>
                 )
                 ctx.body = hnResponse.data
             } catch (error) {
-                console.error(error)
+                console.error("get failed", error)
                 ctx.status = error.response.status
                 ctx.body = error.response.data
             }

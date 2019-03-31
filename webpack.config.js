@@ -1,3 +1,4 @@
+const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CircularDependencyPlugin = require("circular-dependency-plugin")
 const path = require("path")
@@ -33,6 +34,7 @@ const config = {
             {
                 test: /\.(js|jsx)$/,
                 include: APP_DIR,
+                exclude: /node_modules/,
                 // babel loader for ES6 tranpilation and
                 // react-hot for HMR of react components
                 // config for babel-loader is in .babelrc
@@ -62,7 +64,7 @@ const config = {
             }
         ]
     },
-    plugins: [HTMLWebpackPluginConfig, CircularDependencyPluginConfig],
+    plugins: [HTMLWebpackPluginConfig, CircularDependencyPluginConfig, new webpack.HotModuleReplacementPlugin()],
     // setting for devServer (npm run start)
     devServer: {
         // contentBase needs to point to same dir as `entry`
@@ -85,7 +87,11 @@ const config = {
 
         // setup proxy for routing api calls to backend server
         proxy: {
-            "/api/*": "http://localhost:3000"
+            "/api": {
+                target: "http://localhost:3000",
+                secure: false,
+                changeOrigin: true
+            }
         },
         // port to run the dev server on
         port: 8080

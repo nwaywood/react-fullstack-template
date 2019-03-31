@@ -1,8 +1,6 @@
 // @flow
 
 import React from "react"
-import { hot } from "react-hot-loader"
-
 import { BrowserRouter as Router, Route } from "react-router-dom"
 
 import "./globalCSS"
@@ -11,7 +9,7 @@ import AppErrorBoundary from "./AppErrorBoundary"
 import Header from "./Header"
 import About from "./About/About"
 
-export default hot(module)(() => (
+const App = () => (
     <Router>
         <div>
             <Header />
@@ -23,4 +21,5 @@ export default hot(module)(() => (
             </div>
         </div>
     </Router>
-))
+)
+export default App
