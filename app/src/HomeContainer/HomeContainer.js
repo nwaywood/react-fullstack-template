@@ -17,8 +17,8 @@ const HomeContainer = () => {
 
     const onRefreshClick = () => {
         setState({
-            isFetching: true,
-            posts: state.posts
+            ...state,
+            isFetching: true
         })
 
         fetchData()
