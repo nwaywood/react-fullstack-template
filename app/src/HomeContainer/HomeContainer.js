@@ -1,61 +1,51 @@
 // @flow
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 
 import Home from "./Home"
 
-type Props = {}
-type State = {
-    posts: Array<Object>,
-    isFetching: boolean
-}
-
-class HomeContainer extends React.Component<Props, State> {
-    state = {
+const HomeContainer = () => {
+    const [state, setState] = useState({
         posts: [],
         isFetching: true
+    })
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    const onRefreshClick = () => {
+        setState({
+            isFetching: true,
+            posts: state.posts
+        })
+
+        fetchData()
     }
 
-    componentDidMount() {
-        this.fetchData()
-    }
-
-    onRefreshClick = () => {
-        this.setState((prevState, props) => ({
-            isFetching: true
-        }))
-
-        this.fetchData()
-    }
-
-    fetchData = () => {
+    const fetchData = () => {
         axios
             .get("/api/hacker-news")
             .then(({ data }) => {
-                console.log(data)
-                this.setState((prevState, props) => ({
+                setState({
                     posts: data.hits,
                     isFetching: false
-                }))
+                })
             })
             .catch(error => {
-                this.setState(state => {
-                    throw error
-                })
+                throw error
             })
     }
 
-    render() {
-        const Loading = () => <h2>loading...</h2>
-        const { isFetching, posts } = this.state
-        return (
-            <div>
-                <button onClick={this.onRefreshClick}>Refresh</button>
-                {isFetching ? <Loading /> : <Home posts={posts} />}
-            </div>
-        )
-    }
+    const Loading = () => <h2>loading...</h2>
+    const { isFetching, posts } = state
+    return (
+        <div>
+            <button onClick={onRefreshClick}>Refresh</button>
+            {isFetching ? <Loading /> : <Home posts={posts} />}
+        </div>
+    )
 }
 
 export default HomeContainer
